@@ -13,7 +13,7 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=so
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=../../dist/${CND_CONF}/${CND_PLATFORM}/output_http.${CND_DLIB_EXT}
+OUTPUT_PATH=../../dist/Debug/GNU-Linux-x86/output_http.${CND_DLIB_EXT}
 OUTPUT_BASENAME=output_http.${CND_DLIB_EXT}
 PACKAGE_TOP_DIR=liboutputhttp.so/
 

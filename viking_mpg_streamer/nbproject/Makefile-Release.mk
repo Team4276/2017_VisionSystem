@@ -66,18 +66,18 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/viking_mpg_streamer: ${OBJECTFILES}
 
 ${OBJECTDIR}/mjpg_streamer.o: mjpg_streamer.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/mjpg_streamer.o mjpg_streamer.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mjpg_streamer.o mjpg_streamer.cpp
 
 ${OBJECTDIR}/plugins/input_uvc/v4l2uvc.o: plugins/input_uvc/v4l2uvc.cpp 
 	${MKDIR} -p ${OBJECTDIR}/plugins/input_uvc
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/plugins/input_uvc/v4l2uvc.o plugins/input_uvc/v4l2uvc.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/plugins/input_uvc/v4l2uvc.o plugins/input_uvc/v4l2uvc.cpp
 
 ${OBJECTDIR}/utils.o: utils.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/utils.o utils.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/utils.o utils.cpp
 
 # Subprojects
 .build-subprojects:

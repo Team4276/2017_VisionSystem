@@ -13,7 +13,7 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=so
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=../../dist/${CND_CONF}/${CND_PLATFORM}/input_uvc.${CND_DLIB_EXT}
+OUTPUT_PATH=../../dist/Debug/GNU-Linux-x86/input_uvc.${CND_DLIB_EXT}
 OUTPUT_BASENAME=input_uvc.${CND_DLIB_EXT}
 PACKAGE_TOP_DIR=libinputuvc.so/
 

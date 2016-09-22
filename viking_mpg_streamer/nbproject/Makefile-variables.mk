@@ -8,9 +8,9 @@ CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux-x86
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
+CND_ARTIFACT_DIR_Debug=./dist/Debug/GNU-Linux-x86
 CND_ARTIFACT_NAME_Debug=viking_mpg_streamer
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/viking_mpg_streamer
+CND_ARTIFACT_PATH_Debug=./dist/Debug/GNU-Linux-x86/viking_mpg_streamer
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
 CND_PACKAGE_NAME_Debug=vikingmpgstreamer.tar
 CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/vikingmpgstreamer.tar

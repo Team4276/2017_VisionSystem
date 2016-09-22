@@ -204,7 +204,7 @@ void CUpperGoalDetector::detectBlobs(CVideoFrame * pFrame, CFrameGrinder* pFrame
         }
 
         //Find the contours. Use the contourOutput Mat so the original image doesn't get overwritten
-        cv::vector<std::vector<cv::Point> > goalContours;
+        std::vector<std::vector<cv::Point> > goalContours;
         cv::findContours(goal_blob, goalContours, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE);
         
         CUpperGoalRectangle upperGoalRectangle;

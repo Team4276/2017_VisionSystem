@@ -65,13 +65,13 @@ LDLIBSOPTIONS=
 
 ${OBJECTDIR}/httpd.o: httpd.c 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -O2 -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/httpd.o httpd.c
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/httpd.o httpd.c
 
 ${OBJECTDIR}/output_http.o: output_http.c 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -O2 -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/output_http.o output_http.c
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/output_http.o output_http.c
 
 # Subprojects
 .build-subprojects:

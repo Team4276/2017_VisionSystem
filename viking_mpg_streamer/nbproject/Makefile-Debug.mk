@@ -54,41 +54,45 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-ldl -lpthread
+LDLIBSOPTIONS=-Ldist/Debug/GNU-Linux-x86 -ldl -lpthread
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/viking_mpg_streamer
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ./dist/Debug/GNU-Linux-x86/viking_mpg_streamer
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/viking_mpg_streamer: ${OBJECTFILES}
-	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/viking_mpg_streamer ${OBJECTFILES} ${LDLIBSOPTIONS}
+./dist/Debug/GNU-Linux-x86/viking_mpg_streamer: ${OBJECTFILES}
+	${MKDIR} -p ./dist/Debug/GNU-Linux-x86
+	${LINK.cc} -o ./dist/Debug/GNU-Linux-x86/viking_mpg_streamer ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/mjpg_streamer.o: mjpg_streamer.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/mjpg_streamer.o mjpg_streamer.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mjpg_streamer.o mjpg_streamer.cpp
 
 ${OBJECTDIR}/plugins/input_uvc/v4l2uvc.o: plugins/input_uvc/v4l2uvc.cpp 
 	${MKDIR} -p ${OBJECTDIR}/plugins/input_uvc
-	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/plugins/input_uvc/v4l2uvc.o plugins/input_uvc/v4l2uvc.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/plugins/input_uvc/v4l2uvc.o plugins/input_uvc/v4l2uvc.cpp
 
 ${OBJECTDIR}/utils.o: utils.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/utils.o utils.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/utils.o utils.cpp
 
 # Subprojects
 .build-subprojects:
+	cd plugins/input_uvc && ${MAKE}  -f Makefile CONF=Debug
+	cd plugins/output_http && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/viking_mpg_streamer
+	${RM} ./dist/Debug/GNU-Linux-x86/viking_mpg_streamer
 
 # Subprojects
 .clean-subprojects:
+	cd plugins/input_uvc && ${MAKE}  -f Makefile CONF=Debug clean
+	cd plugins/output_http && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

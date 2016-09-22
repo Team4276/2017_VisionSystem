@@ -57,21 +57,21 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ../../dist/${CND_CONF}/${CND_PLATFORM}/output_http.${CND_DLIB_EXT}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ../../dist/Debug/GNU-Linux-x86/output_http.${CND_DLIB_EXT}
 
-../../dist/${CND_CONF}/${CND_PLATFORM}/output_http.${CND_DLIB_EXT}: ${OBJECTFILES}
-	${MKDIR} -p ../../dist/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ../../dist/${CND_CONF}/${CND_PLATFORM}/output_http.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
+../../dist/Debug/GNU-Linux-x86/output_http.${CND_DLIB_EXT}: ${OBJECTFILES}
+	${MKDIR} -p ../../dist/Debug/GNU-Linux-x86
+	${LINK.c} -o ../../dist/Debug/GNU-Linux-x86/output_http.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
 
 ${OBJECTDIR}/httpd.o: httpd.c 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -g -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/httpd.o httpd.c
+	${RM} "$@.d"
+	$(COMPILE.c) -g -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/httpd.o httpd.c
 
 ${OBJECTDIR}/output_http.o: output_http.c 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -g -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/output_http.o output_http.c
+	${RM} "$@.d"
+	$(COMPILE.c) -g -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/output_http.o output_http.c
 
 # Subprojects
 .build-subprojects:
@@ -79,7 +79,7 @@ ${OBJECTDIR}/output_http.o: output_http.c
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ../../dist/${CND_CONF}/${CND_PLATFORM}/output_http.${CND_DLIB_EXT}
+	${RM} ../../dist/Debug/GNU-Linux-x86/output_http.${CND_DLIB_EXT}
 
 # Subprojects
 .clean-subprojects:
