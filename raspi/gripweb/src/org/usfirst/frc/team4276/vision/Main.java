@@ -13,6 +13,7 @@ public class Main {
 	
 	private static BufferedImage image;
 	private static VideoCapture camera;
+	private static GripPipeline myGripPipeline;
 	
 	public static void main(String [] args) {
 		System.out.println("Core.NATIVE_LIBRARY_NAME = " + Core.NATIVE_LIBRARY_NAME);
@@ -21,6 +22,7 @@ public class Main {
 		//start video server thread
 		try {
 			myVideoServer = new VideoServer(5814);
+			myGripPipeline = new GripPipeline();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,6 +46,7 @@ public class Main {
 			{
 	            if (camera.read(frame)) {
 	            	try {
+	            		myGripPipeline.process(frame);
 						myVideoServer.sendImage(frame);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block

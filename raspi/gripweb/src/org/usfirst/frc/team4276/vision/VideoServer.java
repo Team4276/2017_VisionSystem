@@ -30,7 +30,6 @@ import org.opencv.imgcodecs.Imgcodecs;
  */
 public class VideoServer {
 
-	private GripPipeline myGripPipeline;
 	private static boolean _isValidGripCameraCenterX = false;
 	private static double _gripCameraCenterX = 0.0;
 
