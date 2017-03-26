@@ -71,7 +71,7 @@ extern CSettingList g_settings;
 extern context cams[MAX_INPUT_PLUGINS];
 
 #define INPUT_PLUGIN_NAME "UVC webcam grabber"
-#define FILE_NAME_EXPOSURE "/home/ubuntu/exposure3To2047.txt"
+#define FILE_NAME_EXPOSURE "/home/pi/exposure3To2047.txt"
 
 /*
  * UVC resolutions mentioned at: (at least for some webcams)
@@ -89,7 +89,8 @@ static const struct {
     { "VGA", 640, 480},
     { "SVGA", 800, 600},
     { "XGA", 1024, 768},
-    { "SXGA", 1280, 1024}
+    { "SXGA", 1280, 1024},
+    { "HD720", 1280, 720}
 };
 
 /* private functions and variables to this plugin */

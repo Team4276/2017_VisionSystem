@@ -38,7 +38,7 @@
 #include "CSetting.h"
 #include "CSettingList.h"
 
-#define BASE_DIR "/home/ubuntu/"
+#define BASE_DIR "/home/pi/"
 
 CSettingList g_settings;
 

@@ -170,6 +170,7 @@ void CUpperGoalDetector::detectBlobs(CVideoFrame * pFrame, CFrameGrinder* pFrame
                 pFrame->m_timeAddedToQueue[(int) CVideoFrame::FRAME_QUEUE_WAIT_FOR_BLOB_DETECT]);
         timeLastCameraFrame = pFrame->m_timeAddedToQueue[(int) CVideoFrame::FRAME_QUEUE_WAIT_FOR_BLOB_DETECT];
 
+        /*
         // RBG is flawed as a way to filter based on color because the brightness is combined 
         // with the color info. 
         // Not so with HSV, where Hue and Saturation are maintained separately
@@ -206,14 +207,15 @@ void CUpperGoalDetector::detectBlobs(CVideoFrame * pFrame, CFrameGrinder* pFrame
         //Find the contours. Use the contourOutput Mat so the original image doesn't get overwritten
         std::vector<std::vector<cv::Point> > goalContours;
         cv::findContours(goal_blob, goalContours, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE);
+       */
         
         CUpperGoalRectangle upperGoalRectangle;
         float upperGoalAzimuthDegrees = 0.0;
         float distanceToUpperGoalInches = 0.0;
         bool isUpperGoalFound = false;
-        isUpperGoalFound = filterContours(goalContours, pFrame->m_frame.rows, pFrame->m_frame.cols,
-                upperGoalRectangle, upperGoalAzimuthDegrees, distanceToUpperGoalInches);
-       
+        //isUpperGoalFound = filterContours(goalContours, pFrame->m_frame.rows, pFrame->m_frame.cols,
+        //        upperGoalRectangle, upperGoalAzimuthDegrees, distanceToUpperGoalInches);
+        
         CTestMonitor::getTicks(&timeNow);
         int timeLatencyThisCameraFrameMilliseconds = (int) CTestMonitor::getDeltaTimeMilliseconds(
                 pFrame->m_timeAddedToQueue[(int) CVideoFrame::FRAME_QUEUE_WAIT_FOR_BLOB_DETECT],
@@ -225,7 +227,7 @@ void CUpperGoalDetector::detectBlobs(CVideoFrame * pFrame, CFrameGrinder* pFrame
 
         pFrame->updateAnnotationInfo(upperGoalRectangle);
 
-        m_gpioLed.setGreenLED(isUpperGoalFound, pFrame->m_timeRemovedFromQueue[(int) CVideoFrame::FRAME_QUEUE_WAIT_FOR_BLOB_DETECT]);
+        //m_gpioLed.setGreenLED(isUpperGoalFound, pFrame->m_timeRemovedFromQueue[(int) CVideoFrame::FRAME_QUEUE_WAIT_FOR_BLOB_DETECT]);
     }
     catch (...)
     {

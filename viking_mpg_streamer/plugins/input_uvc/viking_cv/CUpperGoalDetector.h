@@ -60,7 +60,7 @@ public:
 private:
 
     float m_tolerancePercentForRadius;
-    CGpioLed m_gpioLed;
+    //CGpioLed m_gpioLed;
 
 private:
     bool filterContours(
